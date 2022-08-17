@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>할인 가격 구하기</title>
+    <style>
+        #contents{
+            width: 450px;
+            margin: 0 auto;
+        }
+        #contents ul{
+            list-style: none;
+            padding-top: 40px;
+        }
+        li{
+            margin-bottom: 15px;
+        }
+        li>label{
+            width: 60px;
+            float: left;
+            text-align: left;
+        }
+        input[type="text"]{
+            width: 120px;
+            padding: 5px 10px;
+            margin: 0px 5px 0px 10px;
+
+        }
+        input:nth-child(3){
+            margin-top: 20px;
+            text-align: center;
+        }
+        button{
+            padding: 11px 11px;
+            border:1px solid #ccc;
+            font-size: 1em;
+            margin-left: 45px;
+            margin-top: 12px;
+            transition: background-color 0.15 ease-in-out border 0.15s ease-in-out;
+        }
+        button:hover{
+            background-color: rgba(249, 192, 201, 0.469);
+            border: 1px solid black;
+        }
+        #showResult{
+            margin-top: 30px;
+            font-size:1.3em;
+            margin-left: auto;
+            text-align: center;
+            padding-right: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div id="contents">
+        <ul>
+            <li>
+                <label for="oPrice">원가</label>
+                <input type="text" id="oPrice">원
+            </li>
+            <li>
+                <label for="rate">할인율</label>
+                <input type="text" id="rate">%
+            </li>
+            <li>
+                <button onclick="showPrice()">할인 가격 구하기</button>
+            </li>
+        </ul>
+    </div>
+    <div id="showResult"></div>
+    <script>
+        function showPrice(){
+            let originPrice=document.querySelector("#oPrice").value;
+            let rate=document.querySelector("#rate").value;
+            let savedPrice=originPrice*(rate/100);
+            let salePrice=originPrice-savedPrice;
+            
+            document.querySelector("#showResult").innerHTML="상품의 원래 가격은 "+originPrice+"원이고 <br> 할인율은 "+rate+"%입니다.<br>"+savedPrice+"원을 절약한 "+salePrice+"원에 구매할 수 있습니다";
+        }
+    </script>
+</body>
+</html>
