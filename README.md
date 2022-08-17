@@ -1,4 +1,4 @@
-- 👋 Hi, I’m @mylotto0626 김태주 1998.11.25
+- 👋 Hi, I’m @mylotto0626 김한나 1998.11.25
 - 👀 현재 목표 : 자바스크립트의 모든 것 정복( JS, Node.js, React, JQuery, Vue.js, Angular.js ) 
 - 🌱 현재 자바스크립트 DOM 배우는 중
 - 💞️ 많은 것을 할 수 있는 프론트 엔드 개발자가 되고 싶습니다!
