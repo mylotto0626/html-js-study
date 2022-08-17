@@ -5,12 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>prompt 함수 연습</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        script{
+            display: none;
+        }
+        body{
+            text-align: center;
+            font-size: 1.3em;
+        }
+        span{
+            color: darksalmon;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <h1>prompt 연습입니다</h1>
     <script>
-        var str=prompt("내용 입력 : ");
-        document.write("현재 출력 문자열은 "+str+"입니다");
+        let str=prompt("내용 입력 : ");
+        document.write("현재 출력 문자열은 "+"<span>"+str+"</span>"+"입니다");
     </script>
 </body>
 </html>
