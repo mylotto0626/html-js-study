@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prompt로 사각형 넓이 출력</title>
+    <style>
+        h1{text-align: center;}
+        script{display: none;}
+        body{text-align: center; font-size: 1.3em;}
+        span{color: darkorange; font-weight: bold;}
+    </style>
+</head>
+<body>
+    <h1>사각형 넓이 구하기</h1>
+    <script>
+        let width=parseInt(prompt("사각형의 가로 길이는? "));
+        let height=parseInt(prompt("사각형의 세로 넓이는 ?"));
+        let area=width*height;
+
+        document.write("사각형의 넓이는 "+"<span>"+area+"m₂</span>"+"입니다");
+    </script>
+</body>
+</html>
