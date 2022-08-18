@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>나이 계산하기</title>
+    <style>
+      body {
+        text-align: center;
+      }
+      h1 {
+        font-size: 2em;
+      }
+      .btn {
+        margin-top: 30px;
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 0.375rem 0.75rem;
+        vertical-align: middle;
+        white-space: nowrap;
+        line-height: 1.4;
+        transition: background-color 0.15s ease-in-out border 0.15s ease-in-out;
+      }
+      .btn:hover {
+        background-color: mistyrose;
+        border: 1px solid black;
+      }
+      .show {
+        margin-top: 50px;
+        padding: 20px 30px;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        font-size: 1.3em;
+        font-weight: bold;
+        color: cornflowerblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><나이 계산하기></h1>
+    <button class="btn" onclick="calc()">나이 계산하기</button>
+    <div id="result" class="show"></div>
+    <script>
+      function calc() {
+        let currentYear = 2022;
+        let birthYear = prompt("태어난 연도 입력 :", "YYYY");
+        let age = currentYear - birthYear + 1;
+
+        document.querySelector("#result").innerHTML =
+          "현재 나이는 " + age + "세 입니다.";
+      }
+    </script>
+  </body>
+</html>
