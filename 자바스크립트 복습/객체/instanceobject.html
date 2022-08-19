@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생성자로 객체 만들기</title>
+    <style>
+        h1{
+            margin-top: 180px;
+        }
+        p{
+            width: 500px;
+            margin-bottom: 20px;
+            padding: 15px;
+            padding-left: 30px;
+            border: 1px solid #ccc;
+            background-color: aquamarine;
+            font-weight: bold;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let drama=function(title,actor,channel,rate){
+            this.title=title;
+            this.actor=actor;
+            this.channel=channel;
+            this.rate=rate;
+        }
+
+        let uyoungu=new drama('이상한 변호사 우영우','박은빈/강태오','ENA',17);
+        let taejo=new drama('태조 왕건','김영철/최수종','KBS',50);
+        let cin=new drama('신데렐라 언니','문근영/천정명','KBS',20);
+
+        let dramaList=[uyoungu,taejo,cin];
+
+        document.write("<h1>드라마 살펴보기</h1>");
+        for(let i=0; i<dramaList.length; i++){
+            document.write("<p>"+dramaList[i].title+", "+dramaList[i].actor+", "+dramaList[i].channel+", "+dramaList[i].rate+"</p>");
+        }
+    </script>
+</body>
+</html>
