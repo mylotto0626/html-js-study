@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체 만들기 1</title>
+    <style>
+        #display{
+            width: 500px;
+            background-color: aquamarine;
+            font-size: 20px;
+            border: 1px solid black;
+            text-align: center;
+            margin: 50px auto;
+            padding: 13px;
+            line-height: 30px;
+            font-weight: bold;
+        }
+        .popup{
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-250%);
+        }
+    </style>
+</head>
+<body>
+    <div id="display" class="popup"></div>
+    <script>
+        let toyRobot={
+            productId: lego-112,
+            name:"starwars",
+            price: 125000,
+            madeIn:"Korea",
+            quantity:10,
+            showStock:function(){
+                document.querySelector("#display").innerHTML=this.name+"제품은 "+this.quantity+"개 남아있습니다";
+            }
+        }
+        toyRobot.showStock();
+    </script>
+</body>
+</html>
