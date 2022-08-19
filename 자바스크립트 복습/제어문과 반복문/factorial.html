@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>팩토리얼 만들기</title>
+    <style>
+        h1{
+            text-align: center;
+        }
+        body{
+            font-size: 1.6em;
+            color: hotpink;
+            text-align: center;
+            padding-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>팩토리얼 만들기</h1>
+    <script>
+        let num=prompt("숫자를 입력하세요","10");
+        let nFact=1;
+        let i=2;
+
+        while(i<=num){
+            nFact*=i; 
+            i++;
+        }
+        document.write(num+"!"+"="+nFact);
+    </script>    
+</body>
+</html>
