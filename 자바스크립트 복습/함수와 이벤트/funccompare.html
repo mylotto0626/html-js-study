@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>숫자 비교하기 함수</title>
+    <style>
+        p{
+            text-align: center;
+            font-size: 1.8em;
+            color: hotpink;
+            padding-top: 50px;
+        }       
+    </style>
+  </head>
+  <body>
+    <script>
+      let num1 = prompt("비교할 첫번째 숫자는?");
+      let num2 = prompt("비교할 두번째 숫자는?");
+
+      function numCompare() {
+        if (num1 == num2) {
+          document.write("<p>" + num1 + "와 " + num2 + "는 같습니다" + "</p>");
+        } else {
+          document.write("<p>" + num1 + "와 " + num2 + "는 같지 않습니다" + "</p>");
+        }
+      }
+      numCompare();
+    </script>
+  </body>
+</html>
