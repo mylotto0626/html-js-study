@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>객체로 원의 둘레와 넓이 구하기</title>
+    <style>
+        body{
+            text-align: center;
+            font-size: 1.5em;
+            line-height: 2em;
+            padding-top: 50px;
+            color: darkblue;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        let round=prompt("원의 반지름은? (cm)");
+        function roundC(r){
+            this.r=r;
+            this.circleRound=function(){
+                return Math.floor(2*Math.PI*this.r);
+            }
+            this.circleArea=function(){
+                return Math.floor(Math.pow(Math.PI,2)*this.r);
+            }
+        }
+        let circle=new roundC(round);
+        document.write("반지름이 "+round+"cm일 때"+"<br>원의 둘레 : 약 "+circle.circleRound()+"cm <br>원의 넓이 : 약 "+circle.circleArea()+"cm<sup>2</sup>");
+    </script>
+</body>    
+</html>
