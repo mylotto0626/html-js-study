@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기념일 계산기</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        .contents{
+            width: 450px;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            border-radius: 5%;
+            box-shadow: 2px 2px 5px #333;
+        }
+        .day1{
+            padding-top: 20px;
+            text-align: center;           
+        }
+        .day1 h3{
+            font-size: 1.3em;
+            color: #333;
+        }
+        .daycount{
+            margin-top: 10px;
+            font-size: 3.5em;
+            font-weight: bold;
+        }
+        .bar{
+            width: 100%;
+            height: 40px;
+            margin: -40px auto 0 auto;
+            line-height: 40px;
+            text-align: center;
+            color: black;
+            font-size: 1.2em;
+            background-color: lavenderblush;
+        }
+        img{
+            transform: translate(180px,-100%);
+        }
+        .day2{
+            width: 420px;
+            margin: 20px auto 20px auto;
+        }
+        .day2 ul{
+            list-style: none;
+            border-bottom: 1px dashed #ccc;
+            height: 60px;
+        }
+        .day2 ul:last-child{
+            border-bottom: none;
+        }
+        .item-title{
+            width: 160px;
+            float: left;
+            line-height: 40px;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .item-date{
+            float: left;
+            text-align: right;
+            margin-left: 20px;
+            line-height: 40px;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="contents">
+        <div class="day1">
+            <h3>로또와 함께</h3>
+            <p class="daycount" id="daycount">
+                <span>며칠?</span>
+            </p>
+        </div>
+        <img src="icons8-cat-64.png" alt="고양이">
+        <div class="bar">기념일 계산</div>
+        <div class="day2">
+            <ul>
+                <li class="item-title">100일</li>
+                <li class="item-date" id="date100"></li>
+            </ul>
+            <ul>
+                <li class="item-title">500일</li>
+                <li class="item-date" id="date500"></li>
+            </ul>
+            <ul>
+                <li class="item-title">1000일</li>
+                <li class="item-date" id="date1000"></li>
+            </ul>
+            <ul>
+                <li class="item-title">3000일</li>
+                <li class="item-date" id="date3000"></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        let nowDate=new Date();
+        let firstDay=new Date("2016-06-26");
+        let toNow=nowDate.getTime();
+        let toFirst=firstDay.getTime();
+        let passedTime=toNow-toFirst;
+        let passedDay=Math.round(passedTime/(60*60*24*1000));
+        
+        document.querySelector("#daycount").innerHTML=passedDay+"일";
+
+        calcDate(100);
+        calcDate(500);
+        calcDate(1000);
+        calcDate(3000);
+
+        function calcDate(days){
+            let future=toFirst+days*(60*60*24*1000);
+            let futureDay=new Date(future);
+            let year=futureDay.getFullYear();
+            let month=futureDay.getMonth();
+            let date=futureDay.getDate();
+            let weekday=new Array('일','월','화','수','목','금','토');
+
+
+            document.querySelector("#date"+days).innerText=year+"년 "+month+"월 "+date+"일 "+weekday[futureDay.getDay()];
+        }
+    </script>
+</body>
+</html>
