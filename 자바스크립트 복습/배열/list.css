@@ -1,1 +1,28 @@
 /*목록 출력 css*/
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+ul li{
+    position: relative;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 12px 8px 12px 40px;
+}
+ul li:nth-child(odd){
+    background-color: #f9f9f9;
+}
+ul li:hover{
+    background-color: linen;
+}
+.close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    padding: 12px 20px;
+}
+.close:hover{
+    background-color: pink;
+}
