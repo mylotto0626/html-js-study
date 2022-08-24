@@ -3,14 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" src="input.css">
-    <link rel="stylesheet" src="list.css">
+    <link rel="stylesheet" href="input.css">
+    <link rel="stylesheet" href="list.css">
     <title>준비물 점검 프로그램 만들기 (예정)</title>
 </head>
 <body>
     <div id="wrap">
         <h2>준비물 점검 목록</h2>
-        <button type="button" id="add" class="addBtn">추가</button>
+        <form>
+            <input type="text" id="item" autofocus="true">
+            <button type="button" id="add" class="addBtn">추가</button>
+        </form>
+        <div id="itemList"></div>
     </div>
+    <script>
+        let itemList=[];
+
+        let addBtn=document.querySelector("#add");
+        addBtn.addEventListener("click",addList);
+
+        function addList(){
+            let item=document.querySelector('#item').value;
+            if(item!=null){
+                itemList.push(item);
+                document.querySelector("#item").value="";
+                document.querySelector("#item").focus();
+            }
+            showList();
+        }
+        function showList(){
+            let list="<ul>";
+            for(i=0; i<itemList.length; i++){
+                list+="<li>"+itemList[i]+"<span class='close' id="+ i +">X</span></li>";
+            }
+            list+="</ul>";
+
+            document.querySelector("#itemList").innerHTML=list;
+
+            let remove=document.querySelectorAll(".close");
+            for(i=0; i<remove.length; i++){
+                remove[i].addEventListener("click",removeList);
+            }
+        }
+        function removeList(){
+            let id=this.getAttribute("id");
+            itemList.splice(id,1);
+            showList();
+        }
+    </script>
 </body>
 </html>
