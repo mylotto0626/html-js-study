@@ -1,1 +1,39 @@
 /*준비물 입력 css*/
+*{
+    box-sizing: border-box;
+}
+#wrap{
+    width: 600px;
+    margin: 0 auto;
+}
+h2{
+    text-align: center;
+}
+form{
+    padding: 30px 40px;
+    background-color: lavenderblush;
+    text-align: center;
+    color: white;
+}
+input{
+    width: 440px;
+    padding: 10px;
+    border: none;
+    float: left;
+    font-size: 16px;
+}
+.addBtn{
+    width: 50px;
+    padding: 10px;
+    border: none;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    color: #444;
+    font-size: 15px;
+}
+form::after{
+    content: "";
+    display: table;
+    clear: both;
+}
