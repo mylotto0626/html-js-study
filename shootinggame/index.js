@@ -9,8 +9,13 @@ canvas.height=700;
 
 document.body.appendChild(canvas);
 
-//변수 선언 이미지,우주선 좌표 
-let backgroundImage,bulletImage,gameOverImage,spaceshipImage;
+//변수 선언 이미지
+let backgroundImage,bulletImage,gameOverImage,spaceshipImage,enemyImage;
+
+//게임오버 변수
+let gameOver=false; //true이면 게임이 끝남, false는 게임 진행 
+
+//우주선 좌표
 let spaceshipX=canvas.width/2-32;
 let spaceshipY=canvas.height-64;
 
@@ -44,6 +49,9 @@ function Enemy(){
     this.y=0;
     this.x=generateRandom(0,canvas.width-48);
     enemyList.push(this);
+  };
+  this.update=function(){
+    this.y+=2; //적군의 속도
   }
 }
 
@@ -86,13 +94,21 @@ function createBullet(){
   console.log("새로운 총알 리스트!!",bulletList);
 }
 
+//적군 찍기
+function createEnemy(){
+  const interval=setInterval(function(){
+    let e=new Enemy();
+    e.init();
+  },1000)
+}
+
 function update(){
-  //방향키 D right
-  if(68 in keyDown){
+  //방향키 end right
+  if(39 in keyDown){
     spaceshipX+=5;
   }
-  //방향키 A left
-  if(65 in keyDown){
+  //방향키 home left
+  if(37 in keyDown){
     spaceshipX-=5;
   }
 
@@ -108,6 +124,11 @@ function update(){
   for(let i=0; i<bulletList.length; i++){
     bulletList[i].update();
   }
+
+  //적군 y좌표 업데이트 하는 함수 호출
+  for(let i=0; i<enemyList.length; i++){
+    enemyList[i].update();
+  }
 }
 
 function render(){
@@ -116,6 +137,9 @@ function render(){
   
   for(let i=0; i<bulletList.length; i++){
     ctx.drawImage(bulletImage,bulletList[i].x,bulletList[i].y);
+  }
+  for(let i=0; i<enemyList.length; i++){
+    ctx.drawImage(enemyImage, enemyList[i].x, enemyList[i].y);
   }
 }
 
@@ -127,6 +151,7 @@ function main(){
 
 loadImage();
 setupKeyboardListener();
+createEnemy();
 main();
 
 //방향키를 누르면
@@ -143,7 +168,7 @@ main();
 //적군만들기 
 //귀엽다..,x,y,init,update
 //적군은 위치가 랜덤하다
-//적군은 밑으로 내려온다
+//적군은 밑으로 내려온다 = y좌표 증가
 //1초마다 하나씩 적군이 나온다
 //적군의 우주선이 바닥에 닿으면 게임 오버
 //적군돠 총알이 만나면 우주선이 사라진다 점수 1점 획득
