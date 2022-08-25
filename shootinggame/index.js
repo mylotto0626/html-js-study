@@ -1,0 +1,149 @@
+let canvas;
+let ctx;
+
+canvas=document.createElement("canvas");
+ctx=canvas.getContext("2d");
+
+canvas.width=400;
+canvas.height=700;
+
+document.body.appendChild(canvas);
+
+//변수 선언 이미지,우주선 좌표 
+let backgroundImage,bulletImage,gameOverImage,spaceshipImage;
+let spaceshipX=canvas.width/2-32;
+let spaceshipY=canvas.height-64;
+
+//총알 
+let bulletList=[]; //총알들을 저장하는 배열 
+function Bullet(){
+  this.x=0;
+  this.y=0;
+  this.init=function(){
+    this.x=spaceshipX+20;
+    this.y=spaceshipY;
+    
+    bulletList.push(this); 
+  };
+  this.update=function(){
+    this.y-=7;
+  }
+}
+
+//적군
+function generateRandom(min,max){
+  let randomNum=Math.floor(Math.random()*(max-min+1))+min;
+  return randomNum;
+}
+
+let enemyList=[];
+function Enemy(){
+  this.x=0;
+  this.y=0;
+  this.init=function(){
+    this.y=0;
+    this.x=generateRandom(0,canvas.width-48);
+    enemyList.push(this);
+  }
+}
+
+function loadImage(){
+  backgroundImage = new Image();
+  backgroundImage.src = "/shootinggame/images/background.gif";
+
+  bulletImage=new Image();
+  bulletImage.src="/shootinggame/images/bullet.png";
+
+  gameOverImage=new Image();
+  gameOverImage.src="/shootinggame/images/game.png";
+
+  spaceshipImage=new Image();
+  spaceshipImage.src="/shootinggame/images/spaceship.png";
+
+  enemyImage=new Image();
+  enemyImage.src="/shootinggame/images/enemy.png";
+}
+
+let keyDown={};
+
+function setupKeyboardListener(){
+  document.addEventListener("keydown",function(event){
+    keyDown[event.keyCode]=true;
+  })
+  document.addEventListener("keyup",function(event){
+    delete keyDown[event.keyCode];
+
+    if(event.keyCode==32){
+      createBullet(); //총알 만들기 
+    }
+  })
+}
+
+function createBullet(){
+  console.log("총알 생성");
+  let b= new Bullet(); //총알이 하나 생성됨 
+  b.init();
+  console.log("새로운 총알 리스트!!",bulletList);
+}
+
+function update(){
+  //방향키 D right
+  if(68 in keyDown){
+    spaceshipX+=5;
+  }
+  //방향키 A left
+  if(65 in keyDown){
+    spaceshipX-=5;
+  }
+
+  //우주선이 경기장 밖을 나가지 않게 x,y좌표 설정
+  if(spaceshipX<=0){
+    spaceshipX=0;
+  }
+  if(spaceshipX>=canvas.width-64){ //우주선 크기를 뺀 y값에서만 움직이도록 
+    spaceshipX=canvas.width-64;
+  }
+
+  //총알 y좌표 업데이트 하는 함수 호출 
+  for(let i=0; i<bulletList.length; i++){
+    bulletList[i].update();
+  }
+}
+
+function render(){
+  ctx.drawImage(backgroundImage,0,0,canvas.width,canvas.height); //x좌표가 왼쪽 위 0,0부터 시작
+  ctx.drawImage(spaceshipImage,spaceshipX,spaceshipY); 
+  
+  for(let i=0; i<bulletList.length; i++){
+    ctx.drawImage(bulletImage,bulletList[i].x,bulletList[i].y);
+  }
+}
+
+function main(){
+  update(); //좌표값 업데이트하고 
+  render(); //그리기
+  requestAnimationFrame(main);
+}
+
+loadImage();
+setupKeyboardListener();
+main();
+
+//방향키를 누르면
+//x,y좌표가 바뀌고 
+//다시 render 해준다
+
+//총알만들기
+//1. 스페이스바를 누르면 총알 발사
+//2, 총일이 발사 = 총알의 y값이 -- , x값은 스페이스를 누른 순간의 우주선 x 좌표
+//3. 발사된 총알을 저장할 배열 만들기 
+//4. 모든 총알들은 x,y 좌표가 있어야 한다 
+//5. 총알 배열로 render를 해준다 
+
+//적군만들기 
+//귀엽다..,x,y,init,update
+//적군은 위치가 랜덤하다
+//적군은 밑으로 내려온다
+//1초마다 하나씩 적군이 나온다
+//적군의 우주선이 바닥에 닿으면 게임 오버
+//적군돠 총알이 만나면 우주선이 사라진다 점수 1점 획득
