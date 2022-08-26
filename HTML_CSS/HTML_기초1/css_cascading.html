@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - CSS 캐스케이딩 ( CSS 적용 우선순위 )</title>
+    <!--순서 캐스케이딩 : 나중에 작성한 속성이 우선순위를 갖는다-->
+    <!--디테일 캐스케이딩 : 부모를 명시한 더 구체적인 코드가 우선순위를 갖는다-->
+    <!--선택자 캐스케이딩 : style > id > class > type -->
+    <style>
+        p{ color: red;}
+        p{ color: blue;}
+        
+        h3{ color: red;}
+        header h3{ color: green;}
+        
+        h4{ color: red;} 
+        .color{ color: green;}
+        #color{ color: blue;}
+    </style>
+</head>
+<body>
+    <p>순서 케스케이딩</p>
+    <header>
+        <h3>디테일 캐스케이딩</h3>
+    </header>
+    <h4 style="color: yellow;" id="color" class="color">선택자 캐스케이딩</h4>   
+</body>
+</html>
