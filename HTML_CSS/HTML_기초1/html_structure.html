@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML 구조를 잡는 태그 - header&nav, main, footer</title>
+    <style>
+        img{
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <!--header : 웹페이지 상단 영역. 로고와 메뉴 바( nav )가 들어감-->
+    <header>
+        <h1>
+            <img src="/HTML_CSS/HTML_기초1/linkimg.jpg">
+        </h1>
+        <nav>
+            <li><a href="#">1번 메뉴</a></li>
+            <li><a href="#">2번 메뉴</a></li>
+            <li><a href="#">3번 메뉴</a></li>
+        </nav>
+    </header>
+    <!--main : 웹페이지 본문 영역-->
+    <!--article : 문서 주요 이미지, 텍스트. 태그 내에 h1~h6 태그가 반드시 존재해야 함-->
+    <main
+        <article>
+            <h2>본문 내용 소개</h2>
+            <p>
+                HTML이란? HTML (Hypertext Markup Language)는 우리가 보는 웹페이지가 어떻게 구조화되어 있는지 브라우저가 알 수 있도록 하는 마크업 언어입니다.
+                <br>-------------------------------------------------------------------
+            </p>
+        </article>
+    </main>
+    <!--footer : 웹페이지 하단 영역. 가장 하단에 들어가는 정보 표기. ex) 전화번호, 주소 -->
+    <footer>
+        <div>
+            <p>경기도 용인시</p>
+            <p>010-1111-1111</p>
+        </div>
+    </footer>
+</body>
+</html>
