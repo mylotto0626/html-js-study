@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - CSS 박스 모델 : margin&padding</title>
+    <style>
+        .content{
+            width: 500px;
+            height: 500px;
+            background-color: lavenderblush;
+            border: 2px solid black;
+            margin: 0 auto; /*테두리 바깥에서 여백을 만듬*/
+        }
+        p{
+            text-align: center;
+            font-size: 1.3em;
+            padding: 200px; /*padding : 테두리 안쪽에 여백을 만듬. 공간이 여백을 포함한 크기로 변경*/
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <p>Hello world</p>
+    </div>    
+</body>
+</html>
