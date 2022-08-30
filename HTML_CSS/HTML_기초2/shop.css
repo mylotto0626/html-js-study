@@ -1,0 +1,126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.contents{
+    width:960px;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+ol,ul{
+    list-style: none;
+}
+img{
+    vertical-align: middle; 
+    /*수직 정렬을 중앙으로 하겠다*/
+    /*img : inline 요소. 공백이 기본적으로 생기므로 
+    default 값으로 vertical-align : middle을 넣어줘서 공백을 제거*/
+}
+#intro{
+    width: 100%; /*960px*/
+    height: 80px;
+}
+#intro h1{
+    float: left;
+    width: 50%; /*480px*/
+    height: 80px;
+    background-color: #fbfbfb;
+}
+#intro h1 a{
+    display: block;
+    font-size: 30px;
+    padding: 20px 0 0 30px;
+}
+#intro nav{
+    float: right;
+    width: 50%; 
+    height: 80px;
+}
+#intro nav ul li{   
+    width: 33.33333%;
+    height: 80px;
+    float: left;
+    text-align: center;
+    line-height: 80px;
+}
+#intro nav ul li.one{
+    background-color: lavenderblush;
+}
+#intro nav ul li.two{
+    background-color: lightpink;
+}
+#intro nav ul li.three{
+    background-color: pink
+}
+#intro nav ul li a{
+    font-size: 20px;
+    font-weight: bold;
+}
+#main article{
+    width: 50%;
+    height: 320px;
+    float:left;
+}
+#main article a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+#main article.one{
+    background-color: aqua;
+}
+#main article.two{
+    background-color: aquamarine;
+}
+#main article.three{
+    background-color: azure;
+}
+#main article.four{
+    background-color: cyan;
+}
+#main article img{
+    width: 100%;
+}
+#main article h2{
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    padding: 5px 0;
+}
+#main article.text{
+    width: 100%;
+    height: 60px;
+}
+#main article.text p{
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 60px;
+}
+#footer{
+    width:100%;
+    height: 80px;
+    clear: both;
+    background-color: #f9f9f9;
+}
+#footer .copyright{
+    float: left;
+    width: 50%;
+}
+#footer .address{
+    float: right;
+    width: 50%;
+}
+#footer .copyright p{
+    color:#999;
+    font-size: 14px;
+    padding: 30px 0 0 40px;
+}
+#footer .address p{
+    color:#999;
+    font-size: 14px;
+    padding: 30px 40px 0 0;
+    text-align: center;
+}
