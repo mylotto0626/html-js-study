@@ -78,16 +78,36 @@ img{
 }
 #main article.one{
     background-color: aqua;
+    transition: background-color 0.3s;
 }
 #main article.two{
     background-color: aquamarine;
+    transition: background-color 0.3s;
 }
 #main article.three{
     background-color: azure;
+    transition: background-color 0.3s;
 }
 #main article.four{
     background-color: cyan;
+    transition: background-color 0.3s;
 }
+
+/*main article hover*/
+#main article.one:hover{
+    background-color: lavenderblush;
+}
+#main article.two:hover{
+    background-color: lightpink;
+}
+#main article.three:hover{
+    background-color: pink;
+}
+#main article.four:hover{
+    background-color:mistyrose;
+}
+
+
 #main article img{
     width: 100%;
 }
