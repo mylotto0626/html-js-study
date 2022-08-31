@@ -4,6 +4,7 @@
 }
 .contents{
     width:960px;
+    margin: 0 auto;
 }
 a{
     text-decoration: none;
@@ -57,7 +58,14 @@ img{
 #intro nav ul li a{
     font-size: 20px;
     font-weight: bold;
+    transition: color 0.3s;
 }
+#intro nav ul li a:hover{
+    color: #fbfbfb;
+}
+
+
+/*Main CSS*/
 #main article{
     width: 50%;
     height: 320px;
