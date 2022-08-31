@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - CSS Animation 효과</title>
+    <style>
+        .animation{
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            /* animation-name: changeWidth; 애니메이션 효과 이름
+            animation-duration: 1s; 애니메이션 효과 적용 시간
+            animation-timing-function: linear; 효과의 속도
+            animation-delay: 1s; 특정 n초에 효과 발동
+            animation-iteration-count: 5; 효과를 몇번 반복할지
+            animation-direction: alternate; from - to - from*/ 
+            /*direction 
+            alternate  : from -> to -> from
+            normal : to -> from
+            reverse : from -> to
+            */
+            animation: changeWidth 1s linear 1s 5 alternate;
+        }
+        @keyframes changeWidth{
+            from{
+                width: 300px;
+            }
+            to{
+                width: 600px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="animation"></div>    
+</body>
+</html>
