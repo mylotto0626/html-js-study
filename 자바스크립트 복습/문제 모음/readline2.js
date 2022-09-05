@@ -4,13 +4,13 @@ const rl=readline.createInterface({
     output: process.stdout
 });
 
-let input=[];
+let input=[]; //값을 받을 배열 선언
 
 rl.on("line",(line)=>{
-    input.push(line);
+    input.push(line); //배열에 입력값 넣기
 });
 
 rl.on("close",()=>{
-    console.log(input);
-    process.exit();
+    console.log(input); 
+    process.exit(); //프로그램 종료
 });
