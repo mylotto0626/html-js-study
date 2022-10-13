@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--viewport : viewport로 너비 배율을 설정해야 의도한 화면을 볼 수 있음-->
+    <!--device-width : 가로 폭을 기기의 가로 폭에 맞춤-->
+    <!--initial-scale : 비율은 항상 1.0-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML - 미디어 쿼리 적용해 반응형 웹 만들기</title>
+    <style>
+        .media{
+            width: 500px;
+            height: 500px;
+            background-color: red;
+        }
+        /*미디어 쿼리 : 모든 기기에 대응하는 반응형 웹을 만들기 위해 사용하는 CSS 구문*/
+        @media (min-width : 320px) and (max-width : 800px){
+            .media{
+                width: 300px;
+                height: 300px;
+                background-color: yellow;
+                border: 2px solid black;
+            }
+        }
+            
+
+    </style>
+</head>
+<body>
+    <div class="media"></div>
+</body>
+</html>
