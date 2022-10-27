@@ -1,66 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>for문으로 별찍기</title>
     <style>
-        h1{
-            text-align: center;
-        }
-        body{
-            text-align: center;
-            font-size: 1.7em;
-            color: #ffc940;
-        }
+      h1 {
+        text-align: center;
+      }
+      body {
+        text-align: center;
+        font-size: 1.7em;
+        color: #ffc940;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1><반복문으로 별찍기></h1>
     <script>
-        for(i=0; i<1; i++){
-            document.write("*");
-        }
-        document.write("<br>");
-
-        for(i=0; i<2; i++){
-            document.write("*");
-        }
-        document.write("<br>");
-
-        for(i=0; i<3; i++){
-            document.write("*");
-        }
-        document.write("<br>");
-
-        for(i=0; i<4; i++){
-            document.write("*");
-        }
-        document.write("<br>");
-
-        for(i=0; i<5; i++){
-            document.write("*");
-        }
-        document.write("<br>");
-
-        for(i=0; i<4; i++){
-            document.write("*");
-        }
-        document.write("<br>");
-
-        for(i=0; i<3; i++){
-            document.write("*");
-        }
-        document.write("<br>");
-
-        for(i=0; i<2; i++){
-            document.write("*");
-        }
-        document.write("<br>");
-
-        for(i=0; i<1; i++){
-            document.write("*");
-        }
+        let arr08 = [];
+		let str = '';
+		
+		for(let i=0; i<5; i++){
+			str += '*';
+			arr08.push(str);
+			document.write(str);
+		}
+		
+		for(let i=(arr08.length)-2; i>=0; i--){
+			document.write(arr08[i]);
+		}
     </script>
-</body>
+  </body>
 </html>
