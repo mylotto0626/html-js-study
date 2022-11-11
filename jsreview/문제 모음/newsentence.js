@@ -9,5 +9,7 @@ let result=sentence.match(/p/g); //join한 배열 전체에서 p 찾기
 
 if(result!=null){
     console.log(result.length);
+    console.log(sentence); 
 }
 
+   
