@@ -39,6 +39,8 @@
 //     console.log(str);
 // }
 
+//반복문으로 다이아몬드 찍기
+
 let n=4;
 
 while(n>=-4){
