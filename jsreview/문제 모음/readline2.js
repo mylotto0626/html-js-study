@@ -1,3 +1,4 @@
+//자바스크립트 -무한 값 입력 받는 Readline
 const readline=require("readline");
 const rl=readline.createInterface({
     input: process.stdin,
