@@ -6,25 +6,24 @@
 
 let n; //숫자 입력
 
-const e = require('express');
 //readline 모듈
 const readline = require('readline');
 const r1 = readline.createInterface({
-    input: r1.stdin,
-    output: r1.stdout
-});
+    input: process.stdin,
+    output: process.stdout
+})
 
 r1.on("line", function (line) {
-    n.parseInt(line);
-    r1.close;
+    n=parseInt(line);
+    r1.close();
 }).on("close", function () {
     let fib = []; //배열을 담을 변수
 
     if (n > 2) {
-        fib(0).push; //0번째 항이 0
-        fib(1).push; //첫번째 항이 1
+        fib.push(0); //0번째 항이 0
+        fib.push(1); //첫번째 항이 1
 
-        for (let i; i < n; i++) {
+        for (let i=2; i < n; i++) {
             if(fib[i-1]+fib[i-2]<n){
                 fib.push(fib[i-1]+fib[i-2]);
             }else{
@@ -37,5 +36,5 @@ r1.on("line", function (line) {
     console.log(fib);
 
     process.exit();
-})
+});
 
