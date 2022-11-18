@@ -1,3 +1,4 @@
+//for in , of 비교 코드
 var data=['a','b','c'];
 
 Array.prototype.test=function(){/* */}

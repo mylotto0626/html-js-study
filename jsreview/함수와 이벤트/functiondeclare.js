@@ -1,3 +1,4 @@
+//다양한 자바스크립트 함수 표현식
 function add(a,b){
     return a+b;
 }

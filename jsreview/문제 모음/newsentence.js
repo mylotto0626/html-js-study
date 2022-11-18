@@ -1,3 +1,4 @@
+//자바스크립트 - splice, join, match
 let words = ['i', 'have', 'a', 'pen', 'i', 'have', 'pineapple', 'i', 'have', 'an', 'apple', 'pen'];
 
 words.splice(4,2); //index 4-5 삭제 . ['i', 'have', 'a', 'pen','pineapple', 'i', 'have', 'an', 'apple', 'pen']

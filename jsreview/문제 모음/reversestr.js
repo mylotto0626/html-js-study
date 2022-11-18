@@ -1,3 +1,4 @@
+//자바스크립트 문자열 거꾸로 출력
 function reverse(str){
     var reverseStr="";
     

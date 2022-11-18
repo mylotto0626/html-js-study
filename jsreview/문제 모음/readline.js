@@ -1,4 +1,4 @@
-//자바스크립트에서는 readline 모듈을 이용하면 콘솔을 통해 값을 입력 가능
+//자바스크립트에서는 readline 모듈을 이용하면 콘솔을 통해 값을 입력 
 const readline=require("readline")
 
 //readline 모듈 입츌력 객체 생성
