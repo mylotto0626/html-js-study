@@ -1,3 +1,4 @@
+//자바스크립트 - readline 모듈 if문
 const readline=require('readline');
 
 const r1=readline.createInterface({
