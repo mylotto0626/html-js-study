@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM 요소의 선택</title>
+  </head>
+  <body>
+    <div name="red" class="fruit" id="grape"></div>
+    <div name="yellow" class="fruit" id="watermelon"></div>
+    <div name="blue" class="vegetable" id="tomato"></div>
+    <div name="green" class="vegetable" id="onion"></div>
+  </body>
+  <script>
+    //HTML <div> 요소를 선택
+    let selectedTagName = document.getElementsByTagName('div');
+    
+    // 아이디가 “watermelon"인 요소를 선택
+    let selectedId = document.getElementById('watermelon');
+
+    // 클래스가 "vegetable"인 모든 요소를 선택
+    let selectedClassName = document.getElementsByClassName('vegetable');
+
+    // name 속성값이 "red"인 모든 요소를 선택
+    let selectedName = document.getElementsByName('red');
+
+    document.writeln(selectedTagName);
+    document.writeln(selectedId);
+    document.writeln(selectedClassName);
+    document.write(selectedName);
+  </script>
+</html>
