@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM 이벤트 핸들러1</title>
+</head>
+<body>
+    <div name="text" class="text" id="text"></div>
+    <button onclick="this.innerText='성공입니다'">클릭하세요!</button>
+
+    <script>
+        window.onload=(
+            function(){
+                let text=document.getElementById('text');
+                text.innerHTML='페이지가 열렸습니다';
+            }
+        )
+    </script>
+</body>
+</html>
