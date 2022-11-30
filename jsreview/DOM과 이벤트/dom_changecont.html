@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM 요소의 내용 변경</title>
+</head>
+<body>
+    <div name="red" class="fruit" id="grape">grape</div>
+    <div name="yellow" class="fruit" id="watermelon">watermelon</div>
+    <div name="blue" class="vegetable" id="tomato">tomato</div>
+    <div name="green" class="vegetable" id="onion">onion</div>
+
+    <script>
+        let selectedId=document.getElementById('grape');
+
+        selectedId.innerHTML='apple';
+
+        let selectedItem=document.getElementById('onion');
+
+        selectedItem.innerHTML='cabbage'
+
+        document.writeln(selectedId);
+        document.write(selectedItem);
+    </script>
+</body>
+</html>
