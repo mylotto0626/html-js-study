@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM 이벤트 - 상자의 크기, 위치 변경 이벤트</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #move{
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background-color: turquoise;
+            left:600px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="move"></h1>
+    <button id="btn">클릭하세요</button>
+    
+    <script>
+        function move(){
+            let box=document.getElementById('move');
+            box.style.width='600px';
+            box.style.height='600px';
+            box.style.left='200px';
+        }
+
+        let btn=document.getElementById('btn');
+
+        btn.addEventListener("click",move);
+    </script>
+</body>
+</html>
