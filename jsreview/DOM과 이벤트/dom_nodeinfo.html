@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM의 NODE 이름, 값, 타입 출력</title>
+</head>
+<body>
+    <div name="red" class="fruit" id="grape">grape</div>
+    <div name="yellow" class="fruit" id="watermelon">watermelon</div>
+    <div name="blue" class="vegetable" id="tomato">tomato</div>
+    <div name="green" class="vegetable" id="onion">onion</div>
+
+    <script>
+        //NODE의 이름 출력
+        let node1=document.childNodes[0];
+        let node2=document.childNodes[1];
+        let node3=node2.childNodes[1];
+
+        document.writeln(node1.nodeName);
+        document.writeln(node2.nodeName);
+        document.write(node3.nodeName);
+
+        //NODE의 값 출력
+        let grape_node=document.getElementById('grape');
+
+        grape_node.firstChild.nodeValue='grape pie';
+
+        document.write(grape_node);
+
+        //NODE의 타입 출력
+        let onion_node=document.getElementById('onion').childNodes[3];
+        let onion_node_value=onion_node.nodeValue;
+        let onion_node_type=onion_node.nodeType;
+
+        document.writeln(onion_node_value);
+        document.write(onion_node_type);
+    </script>
+</body>
+</html>
