@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML DOM 이벤트 핸들러 2</title>
+</head>
+<body>
+    <button name="red"  class="fruit" id="apple">apple</button>
+	<button name="yellow"  class="fruit" id="banana">banana</button>
+    <button name="red"  class="vegetable" id="carrot">carrot</button>
+	<button name="white"  class="vegetable" id="onion">onion</button>
+    <p id="text"></p>
+
+    <script>
+        //아이디가 carrot인 요소 선택
+        let carrot_btn=document.getElementById('carrot');
+        
+        //click 시 텍스트를 보여주는 함수 만들기
+        function showText(){
+            document.getElementById('text').innerText='성공하였습니다';
+            document.getElementById('text').style.color='red';
+        }
+
+        carrot_btn.addEventListener("click",showText);
+    </script>
+</body>
+</html>
