@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form 입출력을 통한 비가 오는 날엔</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        text-align: center;
+      }
+      #form {
+        margin-top: 20px;
+        font-size: 20px;
+      }
+      #form input {
+        margin-left: 5px;
+        padding: 5px 5px;
+      }
+      #form button {
+        margin-left: 5px;
+        font-size: 20px;
+        background-color: gold;
+        padding: 3px 5px;
+        margin-bottom: 16px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form">
+      <label>입력</label>
+      <input type="text" id="input" />
+      <button type="submit" id="btn">제출</button>
+    </form>
+    <h3 id="answer">답안</h3>
+    <script>
+      let form = document.getElementById("form");
+      let input = document.getElementById("input");
+      let answer = document.getElementById("answer");
+
+      form.addEventListener("submit", function (e) {
+        e.preventDefault();
+        let val = input.value;
+
+        if (val >= 50) {
+          answer.textContent = "우산을 챙긴다";
+        } else {
+          answer.textContent = "그냥 간다";
+        }
+        form.reset();
+      });
+    </script>
+  </body>
+</html>
