@@ -28,3 +28,4 @@ for (let i = 0; i < student.length; i++) {
 for(let j=0; j<student.length; j++){
     console.log(student[j].name,"'s major : ",student[j].major);
 }
+
