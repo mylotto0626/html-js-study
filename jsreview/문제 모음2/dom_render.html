@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML DOM - DOM 요소 렌더링</title>
+    <style>
+      *{
+        margin: 0;
+        padding: 0;
+      }
+      .btn{
+        border: 1px solid red;
+        background : none;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 10px 30px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <button class="btn btn1">User1</button>
+      <button class="btn btn2">User2</button>
+      <button class="btn btn3">User3</button>
+    </div>
+    <ul id="list"></ul>
+    <div>
+      <span></span>
+    </div>
+    <script>
+      let data = {
+        items: [
+          {
+            name: "user1",
+            group: 1,
+          },
+          {
+            name: "user2",
+            group: 2,
+          },
+          {
+            name: "user3",
+            group: 3,
+          },
+        ],
+      };
+
+      let arr=document.getElementsByTagName('button');
+
+      for(let i=0; i<3; i++){
+        arr[i].name=data.items[i].name;
+        arr[i].group=data.items[i].group;
+        arr[i].addEventListener("click",activateItem);
+      }
+
+      function activateItem(){
+        alert('hi '+this.name+'!'+'your group is '+this.group);
+      }
+    </script>
+  </body>
+</html>
